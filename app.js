@@ -69,7 +69,10 @@ function renderTracks() {
 }
 
 // Toggle tracks visibility
-function toggleTracks() { return; }
+function toggleTracks() {
+    tracksExpanded = !tracksExpanded;
+    const container = document.getElementById('tracks-list');
+    container.style.display = tracksExpanded ? 'block' : 'none';
 }
 
 // Buy functions - communicate with bot
