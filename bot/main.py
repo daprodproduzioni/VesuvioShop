@@ -9,7 +9,7 @@ import asyncio
 
 # Config
 BOT_TOKEN = "8784323373:AAGqQopxl_1PVtbUMVx5aod9oPNvlzysdbA"
-MINI_APP_URL = "https://cammo22.github.io/VesuvioShop/"  # Update after deployment
+MINI_APP_URL = "https://daprodproduzioni.github.io/VesuvioShop/"
 
 # Album data
 ALBUM_PRICE = 999  # Stars
