@@ -1,0 +1,5 @@
+# Python dependencies for Vesuvio Shop Bot
+# Install: pip install -r requirements.txt
+
+aiogram>=3.0.0
+aiohttp>=3.9.0

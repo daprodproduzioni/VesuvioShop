@@ -1,0 +1,288 @@
+/* Vesuvio Quantico - Mini App Style */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #252525;
+    --accent-orange: #ff6b35;
+    --accent-gold: #ffd700;
+    --accent-red: #e63946;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --gradient-volcano: linear-gradient(135deg, #ff6b35 0%, #ffd700 50%, #e63946 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+    padding-bottom: 80px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 48px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.header h1 {
+    font-size: 28px;
+    background: var(--gradient-volcano);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 8px 0;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Hero */
+.hero {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+    border: 1px solid #333;
+}
+
+.album-cover {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 16px;
+    background: var(--gradient-volcano);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
+}
+
+.volcano-icon {
+    font-size: 64px;
+}
+
+.album-info h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.album-info p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    padding: 8px 16px;
+    border-radius: 24px;
+}
+
+.price-badge .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent-gold);
+}
+
+.price-badge .original-price {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+/* Tracks */
+.tracks-section {
+    margin-bottom: 24px;
+}
+
+.tracks-section h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.toggle-tracks {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.toggle-tracks .chevron {
+    transition: transform 0.3s;
+}
+
+.toggle-tracks.expanded .chevron {
+    transform: rotate(180deg);
+}
+
+.tracks-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.tracks-list.show {
+    max-height: 1000px;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #333;
+}
+
+.track-num {
+    width: 28px;
+    height: 28px;
+    background: var(--bg-card);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--accent-orange);
+    margin-right: 12px;
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.track-artist {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Shop Options */
+.shop-options {
+    margin-bottom: 24px;
+}
+
+.shop-options h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.option-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: var(--bg-card);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.option-card:active {
+    transform: scale(0.98);
+    border-color: var(--accent-orange);
+}
+
+.option-name {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+}
+
+.option-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.option-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--accent-gold);
+}
+
+/* About */
+.about {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 24px;
+    border: 1px solid #333;
+}
+
+.about h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.about p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.about a {
+    color: var(--accent-orange);
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* Theme colors for Telegram */
+:root {
+    color-scheme: dark;
+}
