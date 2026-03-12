@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vesuvio Quantico</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">🌋</div>
+            <h1>Vesuvio Quantico</h1>
+            <p class="subtitle">34 tracce . Napoli rivisitata in AI</p>
+        </header>
+
+        <section class="hero">
+            <div class="album-cover">
+                <div class="volcano-icon">🌋</div>
+            </div>
+            <div class="album-info">
+                <h2>L'Album Completo</h2>
+                <p>34 canzoni Napoletane classiche<br>rivisitate con Intelligenza Artificiale</p>
+                <div class="price-badge">
+                    <span class="price">100 ⭐</span>
+                    <span class="original-price">340 ⭐</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="tracks-section">
+            <h3>📀 Le 34 Tracce</h3>
+            <button class="toggle-tracks" onclick="toggleTracks()">
+                <span id="toggle-text">Mostra tutte</span>
+                <span class="chevron">▼</span>
+            </button>
+            <div class="tracks-list" id="tracks-list">
+                <!-- Tracce generate via JS -->
+            </div>
+        </section>
+
+        <section class="shop-options">
+            <h3>💎 Acquista</h3>
+            <div class="option-card" onclick="buyAlbum()">
+                <div class="option-info">
+                    <span class="option-name">Album Completo</span>
+                    <span class="option-desc">34 tracce + 1 bonus</span>
+                </div>
+                <div class="option-price">100 ⭐</div>
+            </div>
+            <div class="option-card" onclick="buyFounder()">
+                <div class="option-info">
+                    <span class="option-name">Founder Pass</span>
+                    <span class="option-desc">Accesso anticipato + bonus esclusivi</span>
+                </div>
+                <div class="option-price">300 ⭐</div>
+            </div>
+            <div class="option-card" onclick="buyMonthly()">
+                <div class="option-info">
+                    <span class="option-name">Abbonamento Mensile</span>
+                    <span class="option-desc">Nuove uscite ogni mese</span>
+                </div>
+                <div class="option-price">30 ⭐/mese</div>
+            </div>
+        </section>
+
+        <section class="about">
+            <h3>ℹ️Info</h3>
+            <p>Vesuvio Quantico è un progetto DaProdProduzioni.<br>
+            Musica Napoletana generata con AI.</p>
+            <a href="#" onclick="openBot()">@VesuvioQuanticoBot</a>
+        </section>
+
+        <footer>
+            <p>🌋 DaProdProduzioni © 2026</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
