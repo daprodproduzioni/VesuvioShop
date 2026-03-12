@@ -37,9 +37,10 @@ const tracks = [
 ];
 
 const prices = {
-    album: 100,
-    founder: 300,
-    monthly: 30
+    album: 80,
+    preorder: 120,
+    founder: 500,
+    monthly: 22
 };
 
 let tracksExpanded = true;
@@ -78,7 +79,16 @@ function toggleTracks() {
 // Buy functions - communicate with bot
 function buyAlbum() {
     if (tg) {
-        tg.showAlert('🤖 Per acquistare l\'album completo (100 ⭐), scrivi /acquista al bot!');
+        tg.showAlert('🤖 Per acquistare l\'album completo (' + prices.album + ' ⭐), scorri in basso e clicca sul pulsante nel bot!');
+        tg.openBot('VesuvioQuanticoBot');
+    } else {
+        alert('Per acquistare: @VesuvioQuanticoBot');
+    }
+}
+
+function buyPreorder() {
+    if (tg) {
+        tg.showAlert('🤖 Per il preorder (' + prices.preorder + ' ⭐), scorri in basso e clicca sul pulsante nel bot!');
         tg.openBot('VesuvioQuanticoBot');
     } else {
         alert('Per acquistare: @VesuvioQuanticoBot');
@@ -87,7 +97,7 @@ function buyAlbum() {
 
 function buyFounder() {
     if (tg) {
-        tg.showAlert('🌟 Founder Pass a 300 ⭐! Scrivii /founder al bot per informazioni.');
+        tg.showAlert('🌟 Founder Pass ' + prices.founder + ' ⭐. Scorri in basso e clicca sul pulsante nel bot!');
         tg.openBot('VesuvioQuanticoBot');
     } else {
         alert('Per Founder Pass: @VesuvioQuanticoBot');
@@ -96,7 +106,7 @@ function buyFounder() {
 
 function buyMonthly() {
     if (tg) {
-        tg.showAlert('📅 Abbonamento mensile 30 ⭐/mese. Scrivii /abbonamento al bot!');
+        tg.showAlert('📅 Abbonamento mensile ' + prices.monthly + ' ⭐/mese. Scorri in basso e clicca sul pulsante nel bot!');
         tg.openBot('VesuvioQuanticoBot');
     } else {
         alert('Per abbonamento: @VesuvioQuanticoBot');
