@@ -42,7 +42,7 @@ const prices = {
     monthly: 30
 };
 
-let tracksExpanded = false;
+let tracksExpanded = true;
 
 // Initialize Telegram WebApp
 const tg = window.Telegram.WebApp;
@@ -69,21 +69,7 @@ function renderTracks() {
 }
 
 // Toggle tracks visibility
-function toggleTracks() {
-    tracksExpanded = !tracksExpanded;
-    const list = document.getElementById('tracks-list');
-    const btn = document.querySelector('.toggle-tracks');
-    const text = document.getElementById('toggle-text');
-
-    if (tracksExpanded) {
-        list.classList.add('show');
-        btn.classList.add('expanded');
-        text.textContent = 'Nascondi';
-    } else {
-        list.classList.remove('show');
-        btn.classList.remove('expanded');
-        text.textContent = 'Mostra tutte';
-    }
+function toggleTracks() { return; }
 }
 
 // Buy functions - communicate with bot
