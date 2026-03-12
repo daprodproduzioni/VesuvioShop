@@ -2,95 +2,81 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Vesuvio Quantico</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌋 Vesuvio Quantico</h1>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">🌋</div>
+            <h1>Vesuvio Quantico</h1>
             <p class="subtitle">34 tracce . Napoli rivisitata in AI</p>
         </header>
 
         <section class="hero">
-            <h2>🌋 L'Album Completo</h2>
-            <p>34 canzoni Napoletane classiche<br>rivisitate con Intelligenza Artificiale</p>
-            <div class="price">100 ⭐</div>
-            <div class="founder-price">340 ⭐</div>
+            <div class="album-cover">
+                <div class="volcano-icon">🌋</div>
+            </div>
+            <div class="album-info">
+                <h2>L'Album Completo</h2>
+                <p>34 canzoni Napoletane classiche<br>rivisitate con Intelligenza Artificiale</p>
+                <div class="price-badge">
+                    <span class="price">100 ⭐</span>
+                    <span class="original-price">340 ⭐</span>
+                </div>
+            </div>
         </section>
 
-        <section class="tracks">
+        <section class="tracks-section">
             <h3>📀 Le 34 Tracce</h3>
-            <button class="toggle-btn" onclick="toggleTracks()">Mostra tutte <span id="arrow">▼</span></button>
-            <div class="track-list hidden" id="trackList">
-                <div class="track"><span>1.</span> (BONUS TRACK) E Babbà ft DaProd</div>
-                <div class="track"><span>2.</span> (Edited VER) Sei una cosa grande ft Modugno</div>
-                <div class="track"><span>3.</span> 1 voce 1 chitarra ft Bruno Martino</div>
-                <div class="track"><span>4.</span> Balla balla ballerino ft Lucio Dalla</div>
-                <div class="track"><span>5.</span> Che Femmina! ft Aurelio Fierro</div>
-                <div class="track"><span>6.</span> Come ha fatto tua mamma! ft Orchestra Italiana</div>
-                <div class="track"><span>7.</span> Fumo negli occhi ft FrancoBruno</div>
-                <div class="track"><span>8.</span> Giacca Rossa ft Massimo Ranieri</div>
-                <div class="track"><span>9.</span> Indifferentemente ft Maria Nazionale</div>
-                <div class="track"><span>10.</span> Infermiera di notte ft Gianni Celeste</div>
-                <div class="track"><span>11.</span> li per li ft Aurelio Fierro</div>
-                <div class="track"><span>12.</span> Lusingami ft Sergio Bruni</div>
-                <div class="track"><span>13.</span> Ma se viene stasera ft Alessio</div>
-                <div class="track"><span>14.</span> Malafemmina ft Toto</div>
-                <div class="track"><span>15.</span> Malammore ft Franco Ricciardi</div>
-                <div class="track"><span>16.</span> Malinconia ft Aurelio Fierro (Patrizio REMIX)</div>
-                <div class="track"><span>17.</span> maliziosa ft eddy Napoli</div>
-                <div class="track"><span>18.</span> Na Sbandata ft Patrizio</div>
-                <div class="track"><span>19.</span> Passione ft Alan Sorrenti</div>
-                <div class="track"><span>20.</span> Pensaci Bene ft Roberto Murolo (Remix)</div>
-                <div class="track"><span>21.</span> Pensaci Bene ft Roberto Murolo</div>
-                <div class="track"><span>22.</span> Ragione e Sentimento ft Maria Nazionale</div>
-                <div class="track"><span>23.</span> Reginella ft Libero Bovio e Mario Abbate</div>
-                <div class="track"><span>24.</span> Resta con me ft Maria Nazionale e Domenico Modugno</div>
-                <div class="track"><span>25.</span> Sabato notte ft Franco Moreno</div>
-                <div class="track"><span>26.</span> Soffro per te ft Corrado</div>
-                <div class="track"><span>27.</span> Sono il vento ft Aurelio Fierro</div>
-                <div class="track"><span>28.</span> Svegliati ft Sergio Bruni</div>
-                <div class="track"><span>29.</span> Treno ft Franco Ricciardi</div>
-                <div class="track"><span>30.</span> Una sera di maggio ft Sergio Bruni</div>
-                <div class="track"><span>31.</span> Vaffanculo con chi vuoi tu ft Squallor</div>
-                <div class="track"><span>32.</span> Vorrei Baciarti ft Teresa de Sio</div>
-                <div class="track"><span>33.</span> 失控的心 (Remix)</div>
-                <div class="track"><span>34.</span> Voce e Chitarra ft Pino Daniele</div>
+            <button class="toggle-tracks" onclick="toggleTracks()">
+                <span id="toggle-text">Mostra tutte</span>
+                <span class="chevron">▼</span>
+            </button>
+            <div class="tracks-list" id="tracks-list">
+                <!-- Tracce generate via JS -->
             </div>
         </section>
 
-        <section class="buy">
+        <section class="shop-options">
             <h3>💎 Acquista</h3>
-            <div class="product-card">
-                <h4>Album Completo</h4>
-                <p>34 tracce + 1 bonus</p>
-                <div class="product-price">100 ⭐</div>
-                <button class="buy-btn" onclick="buyProduct('album')">Acquista</button>
+            <div class="option-card" onclick="buyAlbum()">
+                <div class="option-info">
+                    <span class="option-name">Album Completo</span>
+                    <span class="option-desc">34 tracce + 1 bonus</span>
+                </div>
+                <div class="option-price">100 ⭐</div>
             </div>
-            <div class="product-card founder">
-                <h4>Founder Pass</h4>
-                <p>Accesso anticipato + bonus esclusivi</p>
-                <div class="product-price">300 ⭐</div>
-                <button class="buy-btn" onclick="buyProduct('founder')">Acquista</button>
+            <div class="option-card" onclick="buyFounder()">
+                <div class="option-info">
+                    <span class="option-name">Founder Pass</span>
+                    <span class="option-desc">Accesso anticipato + bonus esclusivi</span>
+                </div>
+                <div class="option-price">300 ⭐</div>
             </div>
-            <div class="product-card">
-                <h4>Abbonamento Mensile</h4>
-                <p>Nuove uscite ogni mese</p>
-                <div class="product-price">30 ⭐/mese</div>
-                <button class="buy-btn" onclick="buyProduct('subscription')">Acquista</button>
+            <div class="option-card" onclick="buyMonthly()">
+                <div class="option-info">
+                    <span class="option-name">Abbonamento Mensile</span>
+                    <span class="option-desc">Nuove uscite ogni mese</span>
+                </div>
+                <div class="option-price">30 ⭐/mese</div>
             </div>
+        </section>
+
+        <section class="about">
+            <h3>ℹ️Info</h3>
+            <p>Vesuvio Quantico è un progetto DaProdProduzioni.<br>
+            Musica Napoletana generata con AI.</p>
+            <a href="#" onclick="openBot()">@VesuvioQuanticoBot</a>
         </section>
 
         <footer>
-            <p>ℹ️Info</p>
-            <p>Vesuvio Quantico è un progetto DaProdProduzioni.</p>
-            <p>Musica Napoletana generata con AI.</p>
-            <p><a href="#">@VesuvioQuanticoBot</a></p>
-            <p class="copy">🌋 DaProdProduzioni © 2026</p>
+            <p>🌋 DaProdProduzioni © 2026</p>
         </footer>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
