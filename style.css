@@ -154,14 +154,14 @@ body {
     transform: rotate(180deg);
 }
 
-.tracks-list { display: block;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+.tracks-list {
+    display: block;
+    max-height: none;
+    overflow: visible;
 }
 
 .tracks-list.show {
-    max-height: 1000px;
+    max-height: none;
 }
 
 .track-item {
